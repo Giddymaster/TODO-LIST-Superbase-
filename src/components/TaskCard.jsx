@@ -5,6 +5,7 @@ function TaskCard({ task }) {
       <p>{task.description}</p>
       <div className="task-card-actions">
         <button className="btn btn-edit">Edit</button>
+        <button className="btn btn-complete">Complete</button>
         <button className="btn btn-delete">Delete</button>
       </div>
     </div>
