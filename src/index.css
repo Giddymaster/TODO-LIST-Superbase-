@@ -38,6 +38,11 @@ nav h1 {
 }
 
 .task-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  width: 40vw;
   background: var(--color-white);
   border-radius: 8px;
   padding: 20px;
@@ -64,13 +69,11 @@ nav h1 {
   line-height: 1.5;
 }
 
-.task-preview {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.task-grid {
+  display: flex;
+  flex-direction: row;
   gap: 20px;
-  background-color: var(--color-senary);
   padding: 20px;
-  border-radius: 8px;
 }
 
 @media (max-width: 768px) {
@@ -199,6 +202,17 @@ nav h1 {
   padding: 10px 10px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.task-card-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.task-card-actions button svg {
+  font-size: 20px;
 }
 
 .update {

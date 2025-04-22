@@ -29,7 +29,7 @@ function Home() {
       {error && <p>{error}</p>}
       {tasks && (
         <div className="task-preview">
-          <div className="task-gid">
+          <div className="task-grid">
             {tasks.map((task) => (
               <TaskCard task={task} key={task.id} />
             ))}
