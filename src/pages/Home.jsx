@@ -1,6 +1,7 @@
 import supabase from "../config/supabaseClient";
 import { useState, useEffect } from "react";
-import TaskCard from "../components/taskCard";
+import TaskCard from "../components/TaskCard";
+import "../index.css";
 
 function Home() {
   const [error, setError] = useState(null);
