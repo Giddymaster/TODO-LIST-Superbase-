@@ -1,9 +1,9 @@
 :root {
   --color-primary: #12bca2;
   --color-secondary: #6d15df;
-  --color-tertiary: #3c0ac7;
-  --color-quinary: #d0021b;
-  --color-senary: #7ed321;
+  --color-tertiary: #d0021b;
+  --color-white: #fff;
+  --color-black: #000;
 }
 
 h1,
@@ -14,9 +14,9 @@ h3 {
 
 body {
   margin: 0;
-  color: #333;
+  color: var(--color-black);
   font-family: "Poppins";
-  background: #f2f2f2;
+  background: var(--color-white);
 }
 nav {
   background: var(--color-primary);
@@ -24,25 +24,44 @@ nav {
   text-align: center;
 }
 nav a {
-  color: #f2f2f2;
+  color: var(--color-white);
   margin: 10px;
   display: inline-block;
 }
 nav h1 {
-  color: #fff;
+  color: var(--color-white);
 }
 .page {
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
 }
+
 .task-card {
-  background: #fff;
-  border-radius: 5px;
+  background: var(--color-white);
+  border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: var(--color-secondary);
+  color: var(--color-white);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.task-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.task-card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .task-preview {
@@ -50,4 +69,205 @@ nav h1 {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   background-color: var(--color-senary);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .task-card {
+    padding: 15px;
+  }
+
+  .task-card h3 {
+    font-size: 18px;
+  }
+
+  .task-card p {
+    font-size: 14px;
+  }
+
+  .task-preview {
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+
+.create {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.create h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--color-black);
+}
+
+.create label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--color-black);
+}
+
+.create input,
+.create textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.create textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.create .error {
+  color: var(--color-tertiary);
+  background-color: #f2dede;
+  padding: 10px;
+  border: 1px solid #ebccd1;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.create button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.create button:hover {
+  background-color: var(--color-primary);
+}
+
+
+@media (max-width: 768px) {
+  .create {
+    padding: 15px;
+  }
+
+  .create h2 {
+    font-size: 20px;
+  }
+
+  .create input,
+  .create textarea {
+    font-size: 14px;
+  }
+
+  .create button {
+    font-size: 14px;
+  }
+}
+
+.btn-delete {
+  background-color: var(--color-tertiary);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-complete {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.update {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.update h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--color-black);
+}
+
+.update label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--color-black);
+}
+
+.update input,
+.update textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.update textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.update button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.update button:hover {
+  background-color: var();
+}
+
+@media (max-width: 768px) {
+  .update {
+    padding: 15px;
+  }
+
+  .update h2 {
+    font-size: 20px;
+  }
+
+  .update input,
+  .update textarea {
+    font-size: 14px;
+  }
+
+  .update button {
+    font-size: 14px;
+  }
 }
